@@ -16,3 +16,4 @@ public class Nitzan_NasdaqServlet extends HttpServlet {
 		resp.getWriter().println(resultString);
 	}
 }
+
