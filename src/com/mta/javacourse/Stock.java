@@ -22,10 +22,32 @@ public class Stock {
 		this.stockQuantity = 0;		
 	}
 	
+	/**
+	 * copy c'tor of stack class
+	 * @author nitzankrauss
+	 * @param stockToCopy
+	 */
+	
+	public Stock (Stock stockToCopy){
+		
+		//creating new instance for date;	
+		
+		this.setSymbol(stockToCopy.getSymbol());
+		this.setBid(stockToCopy.getBid());
+		this.setAsk(stockToCopy.getAsk());
+		new Date(stockToCopy.getDate().getTime());
+		this.setRecommendation(stockToCopy.getRecommendation());
+		this.stockQuantity = stockToCopy.getStockQuantity();
+	}
+	
 	public String getHtmlDescription(){
 		return "<b>Stock symbol: </b>"+this.getSymbol()+" <b>ask: </b>"+this.getAsk()+"<b> bid: </b>"+this.getBid()+
 				"<b> date: </b>"+formDate.format(this.getDate());
 	}
+	/**
+	 * geters and setters of stack class
+	 * @author nitzankrauss
+	 */
 
 	public String getSymbol() {
 		return symbol;

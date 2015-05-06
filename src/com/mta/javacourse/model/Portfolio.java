@@ -23,6 +23,23 @@ public class Portfolio {
 	}
 	
 	/**
+	 * copy C'tor for Portfolio type
+	 * @param portfolioToCopy
+	 * @author nitzankrauss
+	 */
+	public Portfolio (Portfolio portfolioToCopy){
+		
+		this.setTitle(portfolioToCopy.getTitle());
+		this.setPortfolioSize(portfolioToCopy.portfolioSize);
+		
+		//copy an array of stock from one array to new empty array;
+		for (int i=0 ; i<this.portfolioSize; i++){
+			Stock tmp = new Stock (portfolioToCopy.getStocks()[i]);
+			this.addStock (tmp);
+		}
+	}
+	
+	/**
 	 * Add Stock to the portfolio's array of stocks.
 	 * @param stock : a referance of Stock type
 	 * @author NitzanKrauss
