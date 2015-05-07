@@ -28,12 +28,11 @@ public class Portfolio {
 	 * @author nitzankrauss
 	 */
 	public Portfolio (Portfolio portfolioToCopy){
-		
+		this();
 		this.setTitle(portfolioToCopy.getTitle());
-		this.setPortfolioSize(portfolioToCopy.portfolioSize);
 		
 		//copy an array of stock from one array to new empty array;
-		for (int i=0 ; i<this.portfolioSize; i++){
+		for (int i=0 ; i<portfolioToCopy.getPortfolioSize(); i++){
 			Stock tmp = new Stock (portfolioToCopy.getStocks()[i]);
 			this.addStock (tmp);
 		}
@@ -45,34 +44,17 @@ public class Portfolio {
 	 * @author NitzanKrauss
 	 */
 	
-
-	public void addStock(Stock stock){
-		
-		if(portfolioSize<MAX_PORTFOLIO_SIZE && stock != null){
-			stocks[this.portfolioSize] = stock;
-			this.portfolioSize++;
+	public void addStock (Stock stocks){
+		if(stocks != null && portfolioSize < MAX_PORTFOLIO_SIZE) {
+			this.stocks[portfolioSize] = stocks;
+			portfolioSize++;
+		}else {
+			System.out.println("Sorry, the protfolio is full, or the stock is null!");
 		}
 		
-		else {
-			System.out.println("Sorry, Portfolio is Full OR Stock is NULL");
-		}
 	}
 	
-	/**
-	 * remove first stock from portfolio
-	 * @author nitzankrauss
-	 * @param stock
-	 */
-	public void removeFirstStock (Stock stock){
-		
-		if (this.portfolioSize > 1 ){
-			this.stocks[0] = this.stocks[this.portfolioSize - 1];
-		}
-		else{
-			this.stocks[portfolioSize-1] = null;
-		}
-		this.portfolioSize --;
-	}
+
 	/**
 	 * remove stock by value
 	 * @author nitzankrauss

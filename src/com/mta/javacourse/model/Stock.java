@@ -35,7 +35,7 @@ public class Stock {
 		this.setSymbol(stockToCopy.getSymbol());
 		this.setBid(stockToCopy.getBid());
 		this.setAsk(stockToCopy.getAsk());
-		new Date(stockToCopy.getDate().getTime());
+		this.date = new Date(stockToCopy.getDate().getTime());
 		this.setRecommendation(stockToCopy.getRecommendation());
 		this.stockQuantity = stockToCopy.getStockQuantity();
 	}
