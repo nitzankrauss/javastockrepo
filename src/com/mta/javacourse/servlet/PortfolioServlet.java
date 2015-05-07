@@ -21,7 +21,15 @@ public class PortfolioServlet extends HttpServlet {
 		resp.getWriter().println(portfolio1.getHtmlString());
 		resp.getWriter().println(portfolio2.getHtmlString());
 		
+		portfolio1.removeStock(portfolio1.getStocks()[0].getSymbol());
 		
+		resp.getWriter().println(portfolio1.getHtmlString());
+		resp.getWriter().println(portfolio2.getHtmlString());
+		
+		portfolio2.getStocks()[portfolio2.getPortfolioSize()-1].setBid(55.55f);
+		
+		resp.getWriter().println(portfolio1.getHtmlString());
+		resp.getWriter().println(portfolio2.getHtmlString());
 		
 	}
 

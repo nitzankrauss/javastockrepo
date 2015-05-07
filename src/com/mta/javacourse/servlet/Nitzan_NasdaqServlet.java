@@ -1,4 +1,4 @@
-package com.mta.javacourse;
+package com.mta.javacourse.servlet;
 import java.io.IOException;
 import javax.servlet.http.*;
 

@@ -58,6 +58,46 @@ public class Portfolio {
 		}
 	}
 	
+	/**
+	 * remove first stock from portfolio
+	 * @author nitzankrauss
+	 * @param stock
+	 */
+	public void removeFirstStock (Stock stock){
+		
+		if (this.portfolioSize > 1 ){
+			this.stocks[0] = this.stocks[this.portfolioSize - 1];
+		}
+		else{
+			this.stocks[portfolioSize-1] = null;
+		}
+		this.portfolioSize --;
+	}
+	/**
+	 * remove stock by value
+	 * @author nitzankrauss
+	 * @param symbol
+	 */
+	public void removeStock(String symbol) {
+		if (portfolioSize == 1 || symbol.equals(stocks[portfolioSize-1].getSymbol())){
+			stocks[portfolioSize-1] = null;
+			portfolioSize--;
+			return;
+		}
+		for (int i = 0; i < portfolioSize; i++){
+			if (symbol == null){ 
+				return;
+			}
+			else if (symbol.equals(stocks[i].getSymbol()))
+			{
+				stocks[i] = stocks[portfolioSize - 1];
+				stocks[portfolioSize - 1] = null;
+				portfolioSize--;
+			}
+		}
+		return;
+	}
+	
 	
 	public String getHtmlString(){
 		
