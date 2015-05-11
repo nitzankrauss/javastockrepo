@@ -4,16 +4,15 @@ import com.mta.javacourse.*;
 
 public class Portfolio {
 	
-	private static final int BUY = 0;
-	private static final int SELL = 1;
-	private static final int REMOVE = 2;
-	private static final int HOLD = 3;
-	
 	private static final int MAX_PORTFOLIO_SIZE = 5;
+	public enum ALGO_RECOMMENDATION {
+		BUY, SELL, REMOVE, HOLD 
+	}
 	
 	private String title;
 	private Stock[] stocks;
 	private int portfolioSize;
+	private float balance;
 
 
 	public Portfolio() {
@@ -39,19 +38,32 @@ public class Portfolio {
 	}
 	
 	/**
-	 * Add Stock to the portfolio's array of stocks.
+	 * Add Stock to the portfolio's array of stocks
 	 * @param stock : a referance of Stock type
 	 * @author NitzanKrauss
 	 */
 	
-	public void addStock (Stock stocks){
-		if(stocks != null && portfolioSize < MAX_PORTFOLIO_SIZE) {
-			this.stocks[portfolioSize] = stocks;
-			portfolioSize++;
-		}else {
-			System.out.println("Sorry, the protfolio is full, or the stock is null!");
+	public void addStock (Stock stock){
+
+		if(portfolioSize == MAX_PORTFOLIO_SIZE){
+			System.out.println("Can’t add new stock, portfolio can have only "+this.portfolioSize+" stocks”");
+			return;
+			}
+		 else if (stock == null){
+			System.out.println("There is an error with stock received");
+			return;
+			}
+		 else {
+			for(int i = 0; i< this.portfolioSize; i++){
+				if(stock.getSymbol().equals(this.stocks[i].getSymbol())){
+					System.out.println("Stock already exists in portfolio.");
+					return;
+				}
+			}
 		}
-		
+		stocks[this.portfolioSize] = stock;
+		this.portfolioSize++;
+		return;
 	}
 	
 
@@ -80,6 +92,25 @@ public class Portfolio {
 		return;
 	}
 	
+	/**
+	 * mathod update balance according to the value has been given.
+	 * @author nitzankrauss
+	 * @param amount
+	 */
+	public void updateBalance(float amount) {
+		
+		if (amount < 0){
+			if (this.balance < amount){
+				System.out.println("Sorry! you don't have enough money available!");
+			}
+			else{
+				this.balance = this.balance -  amount;
+			}
+		}
+		else{
+			this.balance +=amount;
+		}
+	}
 	
 	public String getHtmlString(){
 		
@@ -126,7 +157,10 @@ public class Portfolio {
 		return MAX_PORTFOLIO_SIZE;
 	}
 	
-	
+	public float getBalance() {
+		return balance;
+	}
+
 	
 }
 

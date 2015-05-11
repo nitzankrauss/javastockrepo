@@ -1,13 +1,16 @@
 package com.mta.javacourse.model;
 
 import java.text.*;
+
+import com.mta.javacourse.model.Portfolio.ALGO_RECOMMENDATION;
+
 import java.util.*;
 
 public class Stock {
 	private String symbol;
 	private float bid, ask;
 	private java.util.Date date;
-	private int recommendation;
+	private ALGO_RECOMMENDATION recommendation;
 	private int stockQuantity;
 	
 	private SimpleDateFormat formDate = new SimpleDateFormat("dd/MM/yyyy");
