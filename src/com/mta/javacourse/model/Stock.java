@@ -44,14 +44,15 @@ public class Stock {
 	}
 	
 	public String getHtmlDescription(){
-		return "<b>Stock symbol: </b>"+this.getSymbol()+" <b>ask: </b>"+this.getAsk()+"<b> bid: </b>"+this.getBid()+
-				"<b> date: </b>"+formDate.format(this.getDate());
+		return "<b>Stock symbol: </b>"+this.getSymbol()+" <b>Ask: </b>"+this.getAsk()+"<b> Bid: </b>"+this.getBid()+
+				"<b> Date: </b>"+this.formDate.format(this.getDate())+" <b>Quantity: </b>"+this.getStockQuantity();
 	}
 	/**
 	 * geters and setters of stack class
 	 * @author nitzankrauss
 	 */
 
+	
 	public String getSymbol() {
 		return symbol;
 	}

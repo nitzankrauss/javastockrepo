@@ -18,7 +18,6 @@ public class PortfolioManager {
 		
 		Portfolio portfolio = new Portfolio("Exercise 7 portfolio ");
 		portfolio.updateBalance(10000);
-		portfolio.setTitle("Portfolio");;
 		
 		Calendar cal = Calendar.getInstance();
 		cal.set(2014,10,15);
