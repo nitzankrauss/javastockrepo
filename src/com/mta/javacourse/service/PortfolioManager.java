@@ -16,7 +16,8 @@ public class PortfolioManager {
 
 	public Portfolio getPortfolio(){
 		
-		Portfolio portfolio = new Portfolio();
+		Portfolio portfolio = new Portfolio("Exercise 7 portfolio ");
+		portfolio.updateBalance(10000);
 		portfolio.setTitle("Portfolio");;
 		
 		Calendar cal = Calendar.getInstance();
@@ -32,11 +33,15 @@ public class PortfolioManager {
 		stock1 = new Stock ("PIH",12.4F,13.1F,date2);
 		stock3 = new Stock("CAAS", 31.5F, 32.2F,date3);
 		
-		portfolio.addStock(stock2);
-		portfolio.addStock(stock1);
-		portfolio.addStock(stock3);
+		portfolio.buyStock(stock1, 20);
+		portfolio.buyStock(stock2, 30);
+		portfolio.buyStock(stock3, 40);
+		
+		portfolio.sellStock("AAL", -1);
+		portfolio.removeStock("CAAS");
 		
 		return portfolio;
+		
 	}
 	
 	

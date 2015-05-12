@@ -21,7 +21,7 @@ public class Stock {
 		this.bid = newBid;
 		this.ask = newAsk;
 		this.date = date;
-		this.recommendation = 0;
+		this.recommendation = ALGO_RECOMMENDATION.HOLD;
 		this.stockQuantity = 0;		
 	}
 	
@@ -92,12 +92,12 @@ public class Stock {
 		this.formDate = formDate;
 	}
 	
-	public int getRecommendation() {
+	public ALGO_RECOMMENDATION getRecommendation() {
 		return recommendation;
 	}
 
 
-	public void setRecommendation(int recommendation) {
+	public void setRecommendation(ALGO_RECOMMENDATION recommendation) {
 		this.recommendation = recommendation;
 	}
 
