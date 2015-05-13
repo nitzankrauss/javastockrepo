@@ -143,17 +143,12 @@ public class Portfolio {
 	 * @param amount
 	 */
 	public void updateBalance(float amount) {
-		
-		if (amount < 0){
-			if (this.balance < amount){
-				System.out.println("Sorry! you don't have enough money available!");
-			}
-			else{
-				this.balance = this.balance -  amount;
-			}
-		}
-		else{
-			this.balance +=amount;
+		float tempBalance = this.balance + amount;
+		if(tempBalance < 0){
+			System.out.println("Please note you may not change balance to negative amount!");
+		}else {
+			this.balance = tempBalance;
+			System.out.println("Balance has been updated to "+ this.balance);
 		}
 	}
 	
@@ -174,17 +169,19 @@ public class Portfolio {
 		int i = this.findStock (symbol);
 		
 		if(i>-1){	
-			if(this.stocks[i].getStockQuantity() - quantity < 0){
+			if(this.stocks[i].getStockQuantity() < quantity ){
 				System.out.println("Not enough stocks to sell");
 				return false;
 
-			}else if(quantity == -1){
+			}
+			else if(quantity == -1){
 				this.updateBalance(this.stocks[i].getStockQuantity()*this.stocks[i].getBid());
 				this.stocks[i].setStockQuantity(0);
 				System.out.println("Entire stock ("+symbol+") holdings was sold succefully");
 				return true;
 
-			}else {
+			}
+			else {
 				this.updateBalance(quantity*this.stocks[i].getBid());
 				this.stocks[i].setStockQuantity(stocks[i].getStockQuantity()-quantity);
 				System.out.println("An amount of "+quantity+" of stock ("+symbol+") was sold succefully");
