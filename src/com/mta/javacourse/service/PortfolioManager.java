@@ -11,7 +11,7 @@ import com.mta.javacourse.model.*;
  * @author nitzankrauss
  *
  */
-public class PortfolioManager {
+public class PortfolioManager implements PortfolioManagerInterface {
 		
 
 	public Portfolio getPortfolio(){
