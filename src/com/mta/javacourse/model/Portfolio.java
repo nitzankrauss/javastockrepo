@@ -34,11 +34,10 @@ public class Portfolio implements PortfolioInterface{
 
 	/**
 	 * C'tor of Portfolio.
-	 * Creates an instance of an array of Stocks {@link com.shultz.model.Stock}
+	 * Creates an instance of an array of Stocks
 	 * Set the Portfolio Size to start as 0.
 	 * @param title
 	 * 		  the title of the Portfolio
-	 * @see com.shultz.model.Stock
 	 * @author nitzankrauss
 	 */
 	public Portfolio() {
@@ -50,11 +49,11 @@ public class Portfolio implements PortfolioInterface{
 
 	/**
 	 * C'tor of Portfolio.
-	 * Creates an instance of an array of Stocks {@link com.shultz.model.Stock}
+	 * Creates an instance of an array of Stocks 
 	 * Set the Portfolio Size to start as 0.
 	 * @param title
 	 * 		  the title of the Portfolio
-	 * @see com.shultz.model.Stock
+
 	 * @author nitzankrauss
 	 */
 	public Portfolio(StockInterface[] stocksArray) {
@@ -66,11 +65,10 @@ public class Portfolio implements PortfolioInterface{
 
 	/**
 	 * Copy C'tor of Portfolio.
-	 * Creates an instance of an array of Stocks {@link com.shultz.model.Stock}
+	 * Creates an instance of an array of Stocks
 	 * Set the Portfolio Size to start as 0. And sets the portfolio name as string received.
 	 * @param title
 	 * 		  the title of the Portfolio
-	 * @see com.shultz.model.Stock
 	 * @author nitzankrauss
 	 */
 
